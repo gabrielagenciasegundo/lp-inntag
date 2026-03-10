@@ -43,11 +43,11 @@ export default function HeroSection() {
                             />
                         </div>
 
-                        <h2 className="text-3xl md:text-5xl font-bold text-slate-200 uppercase mb-2">
+                        <h2 className="text-3xl md:text-5xl font-semibold text-slate-200 mb-2">
                             Reduza sua conta
                         </h2>
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-[#D51119] tracking-tight leading-none mb-4" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
-                            DE ENERGIA RESIDENCIAL
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold text-[#D51119] capitalize tracking-tight leading-none mb-4" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
+                            de energia residencial
                         </h1>
 
                         <p className="text-xl md:text-3xl font-medium text-white leading-tight mt-6">
@@ -66,7 +66,7 @@ export default function HeroSection() {
                     >
                         <div id="lead-form" className="bg-[#D51119] rounded-lg shadow-2xl p-6 md:p-8 flex flex-col space-y-5 border-b-8 border-[#9a0c12]">
                             <div className="text-center mb-2">
-                                <h3 className="text-lg md:text-xl font-bold text-white uppercase">
+                                <h3 className="text-lg md:text-xl font-bold text-white capitalize">
                                     Comece a ECONOMIZAR com
                                     energia solar <span className="font-black">agora!</span>
                                 </h3>
@@ -96,14 +96,14 @@ export default function HeroSection() {
                                 />
 
                                 <div className="space-y-1">
-  <label className="text-xs text-white/90 font-bold uppercase tracking-wide ml-1">
-    Anexar Conta de Energia
-  </label>
+                                    <label className="text-xs text-white/90 font-bold uppercase tracking-wide ml-1">
+                                        Anexar Conta de Energia
+                                    </label>
 
-  <Input
-    type="file"
-    accept=".pdf,.png,.jpg,.jpeg"
-    className="
+                                    <Input
+                                        type="file"
+                                        accept=".pdf,.png,.jpg,.jpeg"
+                                        className="
       h-14
       w-full
       text-sm
@@ -116,7 +116,7 @@ export default function HeroSection() {
       file:h-full
       file:border-0
       file:px-7
-      
+      file:rounded-md
       file:mr-1
       file:bg-white/20
       file:text-white
@@ -126,8 +126,8 @@ export default function HeroSection() {
 
       hover:file:bg-white/30
     "
-  />
-</div>
+                                    />
+                                </div>
 
                                 <div className="pt-2">
                                     <Button className="w-full py-7 text-lg font-black bg-[#333333] hover:bg-[#222222] text-white rounded-sm uppercase tracking-wider shadow-lg hover:-translate-y-1 transition-all border-b-4 border-[#9a0c12] relative overflow-hidden group cursor-pointer">

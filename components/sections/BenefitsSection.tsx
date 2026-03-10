@@ -48,10 +48,10 @@ export default function BenefitsSection() {
             <div className="container mx-auto px-4 max-w-6xl text-center">
 
                 <div className="mb-12">
-                    <h2 className="text-xl md:text-2xl text-slate-400 font-medium tracking-widest uppercase mb-1">
+                    <h2 className="text-xl md:text-2xl text-slate-400 font-medium tracking-widest capitalize mb-1">
                         Vantagens da
                     </h2>
-                    <h3 className="text-4xl md:text-5xl text-slate-800 font-black uppercase">
+                    <h3 className="text-4xl md:text-5xl text-slate-800 font-black capitalize">
                         Energia Solar
                     </h3>
                 </div>
@@ -81,7 +81,7 @@ export default function BenefitsSection() {
                                     {benefit.icon}
                                 </div>
                                 <div>
-                                    <h4 className="text-2xl font-black text-[#D51119] uppercase mb-2 tracking-wide" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
+                                    <h4 className="text-2xl font-black text-[#D51119] capitalize mb-2 tracking-wide" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
                                         {benefit.title}
                                     </h4>
                                     <p className="text-white text-base md:text-lg leading-relaxed font-medium" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>

@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { ShieldCheck, Target, Users, Wrench, Award } from "lucide-react";
+import { useEffect, useState, useRef } from "react";
+import { ShieldCheck, Target, Users, Wrench, Award, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function TrustBar() {
@@ -41,18 +41,28 @@ export default function TrustBar() {
         <section className="bg-[#D51119]/5 border-y border-slate-200 py-6 overflow-hidden">
             <div className="container mx-auto px-4">
 
-                {/* Desktop Layout: Todos os itens visíveis */}
-                <div className="hidden md:flex flex-wrap justify-center lg:justify-between items-center gap-4">
-                    {items.map((item, index) => (
-                        <div key={index} className="flex items-center gap-3">
-                            <div className="p-2 bg-white rounded-full shadow-sm border border-slate-100">
-                                {item.icon}
+                {/* Desktop Layout: Escada Rolante (Marquee Infinito) */}
+                <div className="hidden md:flex relative items-center max-w-full overflow-hidden">
+                    {/* Shadow edges for gradient fade effect (opcional, mas fica bonito) */}
+                    <div className="absolute left-0 top-0 w-24 h-full bg-gradient-to-r z-10 pointer-events-none"></div>
+                    <div className="absolute right-0 top-0 w-24 h-full bg-gradient-to-l  z-10 pointer-events-none"></div>
+
+                    <div
+                        className="flex flex-nowrap items-center gap-10 lg:gap-14 py-2 w-max animate-[marquee_25s_linear_infinite]"
+                        style={{ paddingLeft: '20px' }}
+                    >
+                        {/* Renderiza a array 2 vezes para o loop contínuo perfeito */}
+                        {[...items, ...items].map((item, index) => (
+                            <div key={index} className="flex items-center gap-3 shrink-0">
+                                <div className="p-2 bg-white rounded-full shadow-sm border border-slate-100">
+                                    {item.icon}
+                                </div>
+                                <span className="text-base font-semibold text-slate-700 whitespace-nowrap">
+                                    {item.text}
+                                </span>
                             </div>
-                            <span className="text-base font-medium text-slate-700 whitespace-nowrap">
-                                {item.text}
-                            </span>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
 
                 {/* Mobile Layout: Carrossel Automático */}
