@@ -11,7 +11,7 @@ export default function HeroSection() {
             {/* Background Image Setup */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/residencial.jpg"
+                    src="/placas_solares.jpg"
                     alt="Energia solar residencial Inntag"
                     fill
                     className="object-cover object-center"
@@ -43,11 +43,11 @@ export default function HeroSection() {
                             />
                         </div>
 
-                        <h2 className="text-2xl md:text-3xl font-bold tracking-widest text-slate-200 uppercase">
+                        <h2 className="text-3xl md:text-5xl font-bold tracking-widest text-slate-200 uppercase mb-2">
                             Reduza sua conta
                         </h2>
-                        <h1 className="text-5xl md:text-7xl font-black text-[#D51119] tracking-tight leading-none mb-4" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
-                            DE ENERGIA
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-[#D51119] tracking-tight leading-none mb-4" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
+                            DE ENERGIA RESIDENCIAL
                         </h1>
 
                         <p className="text-xl md:text-3xl font-medium text-white leading-tight mt-6">
@@ -64,7 +64,7 @@ export default function HeroSection() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="w-full max-w-md mx-auto lg:ml-auto"
                     >
-                        <div className="bg-[#D51119] rounded-lg shadow-2xl p-6 md:p-8 flex flex-col space-y-5 border-b-8 border-[#9a0c12]">
+                        <div id="lead-form" className="bg-[#D51119] rounded-lg shadow-2xl p-6 md:p-8 flex flex-col space-y-5 border-b-8 border-[#9a0c12]">
                             <div className="text-center mb-2">
                                 <h3 className="text-lg md:text-xl font-bold text-white uppercase">
                                     Comece a ECONOMIZAR com
@@ -79,14 +79,13 @@ export default function HeroSection() {
                                 />
 
                                 <Input
-                                    type="email"
-                                    placeholder="E-mail principal"
+                                    type="tel"
+                                    placeholder="Celular / WhatsApp"
                                     className="bg-white border-0 py-6 text-slate-800 focus-visible:ring-2 focus-visible:ring-[#333333] rounded-sm"
                                 />
 
                                 <Input
-                                    type="tel"
-                                    placeholder="Celular / WhatsApp"
+                                    placeholder="Cidade / Estado"
                                     className="bg-white border-0 py-6 text-slate-800 focus-visible:ring-2 focus-visible:ring-[#333333] rounded-sm"
                                 />
 
@@ -96,9 +95,19 @@ export default function HeroSection() {
                                     className="bg-white border-0 py-6 text-slate-800 focus-visible:ring-2 focus-visible:ring-[#333333] rounded-sm"
                                 />
 
+                                <div className="space-y-1">
+                                    <label className="text-xs text-white/90 font-bold uppercase tracking-wide ml-1">Anexar Conta de Energia</label>
+                                    <Input
+                                        type="file"
+                                        accept=".pdf, .png, .jpg, .jpeg"
+                                        className="bg-white/10 border border-white/30 text-white file:text-white file:bg-white/20 file:border-0 file:rounded-sm hover:file:bg-white/30 transition-colors cursor-pointer"
+                                    />
+                                </div>
+
                                 <div className="pt-2">
-                                    <Button className="w-full py-7 text-lg font-black bg-[#333333] hover:bg-[#444444] text-white rounded-sm uppercase tracking-wider shadow-lg hover:-translate-y-1 transition-transform border-b-4 border-[#1a1a1a]">
-                                        ECONOMIZE AGORA
+                                    <Button className="w-full py-7 text-lg font-black bg-[#333333] hover:bg-[#222222] text-white rounded-sm uppercase tracking-wider shadow-lg hover:-translate-y-1 transition-all border-b-4 border-[#9a0c12] relative overflow-hidden group">
+                                        <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                                        <span className="relative z-10">ECONOMIZE AGORA</span>
                                     </Button>
                                 </div>
                             </form>

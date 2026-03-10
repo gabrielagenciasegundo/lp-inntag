@@ -16,7 +16,6 @@ export default function Home() {
       <TrustBar />
       <BenefitsSection />
       <ReviewsSection />
-      <MidCTASection />
       <ProjectsGallerySection />
       <AboutSection />
       <HowItWorksSection />

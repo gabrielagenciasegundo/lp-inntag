@@ -45,7 +45,7 @@ export default function BenefitsSection() {
 
     return (
         <section className="py-20 bg-white relative">
-            <div className="container mx-auto px-4 max-w-5xl text-center">
+            <div className="container mx-auto px-4 max-w-6xl text-center">
 
                 <div className="mb-12">
                     <h2 className="text-xl md:text-2xl text-slate-400 font-medium tracking-widest uppercase mb-1">
@@ -94,8 +94,12 @@ export default function BenefitsSection() {
                 </div>
 
                 <div className="mt-12 text-center">
-                    <button className="px-10 py-5 bg-[#333333] hover:bg-[#444444] text-white font-bold text-lg uppercase rounded-sm shadow-xl transition-all border-b-4 border-[#1a1a1a] hover:-translate-y-1">
-                        Quero Economizar
+                    <button
+                        onClick={() => document.getElementById('lead-form')?.scrollIntoView({ behavior: 'smooth' })}
+                        className="px-12 py-5 bg-[#333333] hover:bg-[#222222] text-white font-black text-lg uppercase rounded-sm shadow-2xl transition-all border-b-4 border-[#9a0c12] hover:-translate-y-1 relative overflow-hidden group"
+                    >
+                        <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                        <span className="relative z-10">Quero Economizar</span>
                     </button>
                     <p className="text-xs text-[#D51119] mt-3 font-bold uppercase tracking-wider">Orçamento rápido e gratuito</p>
                 </div>

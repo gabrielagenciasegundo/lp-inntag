@@ -54,9 +54,11 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: 219 73% 22%; /* Deep Navy Blue */
+  --primary: 219 73% 22%;
+  /* Deep Navy Blue */
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: 160 84% 39%; /* Vibrant Green */
+  --secondary: 160 84% 39%;
+  /* Vibrant Green */
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
@@ -120,10 +122,18 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
   }
 }

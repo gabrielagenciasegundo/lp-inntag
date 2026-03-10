@@ -59,7 +59,7 @@ export default function FAQSection() {
                         {faqs.map((faq, index) => (
                             <div key={index} className="bg-white rounded shadow-md overflow-hidden">
                                 <AccordionItem value={`item-${index}`} className="border-none px-6">
-                                    <AccordionTrigger className="text-left text-base font-bold text-slate-800 hover:text-emerald-600 hover:no-underline transition-colors py-5 [&[data-state=open]>svg]:text-emerald-600">
+                                    <AccordionTrigger className="text-left text-base font-bold text-slate-800 hover:text-[#D51119] hover:no-underline transition-colors py-5 [&[data-state=open]>svg]:text-[#D51119]">
                                         <span className="flex-1">{faq.q}</span>
                                     </AccordionTrigger>
                                     <AccordionContent className="text-slate-600 text-sm leading-relaxed pb-6 pt-2">
@@ -72,8 +72,12 @@ export default function FAQSection() {
                 </div>
 
                 <div className="mt-16 text-center">
-                    <button className="px-10 py-5 bg-[#333333] hover:bg-[#444444] text-white font-bold text-lg uppercase rounded-sm shadow-2xl transition-transform border-b-4 border-[#1a1a1a] hover:-translate-y-1">
-                        Quero Economizar
+                    <button
+                        onClick={() => document.getElementById('lead-form')?.scrollIntoView({ behavior: 'smooth' })}
+                        className="px-12 py-5 bg-[#333333] hover:bg-[#222222] text-white font-black text-lg uppercase rounded-sm shadow-2xl transition-all border-b-4 border-[#9a0c12] hover:-translate-y-1 relative overflow-hidden group"
+                    >
+                        <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                        <span className="relative z-10">Quero Economizar</span>
                     </button>
                     <p className="text-xs text-[#D51119] mt-3 font-bold uppercase tracking-wider">Equipe pronta para ajudar</p>
                 </div>
