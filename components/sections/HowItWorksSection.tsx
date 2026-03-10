@@ -8,27 +8,27 @@ export default function HowItWorksSection() {
         {
             title: "Envio de Dados",
             desc: "Você nos fornece informações básicas sobre sua residência e consumo.",
-            icon: <FileText className="w-8 h-8 text-primary" />
+            icon: <FileText className="w-8 h-8 text-[#D51119]" />
         },
         {
             title: "Análise Técnica",
             desc: "A Inntag analisa o perfil de consumo e a viabilidade do seu telhado.",
-            icon: <Calculator className="w-8 h-8 text-primary" />
+            icon: <Calculator className="w-8 h-8 text-[#D51119]" />
         },
         {
             title: "Simulação",
             desc: "Nossa equipe monta um projeto personalizado para a sua necessidade.",
-            icon: <Zap className="w-8 h-8 text-primary" />
+            icon: <Zap className="w-8 h-8 text-[#D51119]" />
         },
         {
             title: "Proposta",
             desc: "Você recebe o orçamento com as melhores condições de pagamento.",
-            icon: <FileCheck className="w-8 h-8 text-primary" />
+            icon: <FileCheck className="w-8 h-8 text-[#D51119]" />
         },
         {
             title: "Instalação",
             desc: "Após aprovação, realizamos a instalação rápida e segura do seu sistema.",
-            icon: <CheckCircle className="w-8 h-8 text-primary" />
+            icon: <CheckCircle className="w-8 h-8 text-[#D51119]" />
         }
     ];
 
@@ -60,7 +60,7 @@ export default function HowItWorksSection() {
                                 className="flex md:flex-col items-center text-left md:text-center gap-6 md:gap-4"
                             >
                                 <div className="w-20 h-20 md:w-24 md:h-24 shrink-0 rounded-full bg-slate-50 border-4 border-white shadow-lg flex items-center justify-center relative">
-                                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center font-bold text-sm shadow-sm ring-4 ring-white">
+                                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#D51119] text-white rounded-full flex items-center justify-center font-bold text-sm shadow-sm ring-4 ring-white">
                                         {i + 1}
                                     </div>
                                     {step.icon}

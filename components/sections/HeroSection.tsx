@@ -43,10 +43,10 @@ export default function HeroSection() {
                             />
                         </div>
 
-                        <h2 className="text-3xl md:text-5xl font-bold tracking-widest text-slate-200 uppercase mb-2">
+                        <h2 className="text-3xl md:text-5xl font-bold text-slate-200 uppercase mb-2">
                             Reduza sua conta
                         </h2>
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-[#D51119] tracking-tight leading-none mb-4" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-[#D51119] tracking-tight leading-none mb-4" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
                             DE ENERGIA RESIDENCIAL
                         </h1>
 
@@ -96,16 +96,41 @@ export default function HeroSection() {
                                 />
 
                                 <div className="space-y-1">
-                                    <label className="text-xs text-white/90 font-bold uppercase tracking-wide ml-1">Anexar Conta de Energia</label>
-                                    <Input
-                                        type="file"
-                                        accept=".pdf, .png, .jpg, .jpeg"
-                                        className="bg-white/10 border border-white/30 text-white file:text-white file:bg-white/20 file:border-0 file:rounded-sm hover:file:bg-white/30 transition-colors cursor-pointer"
-                                    />
-                                </div>
+  <label className="text-xs text-white/90 font-bold uppercase tracking-wide ml-1">
+    Anexar Conta de Energia
+  </label>
+
+  <Input
+    type="file"
+    accept=".pdf,.png,.jpg,.jpeg"
+    className="
+      h-14
+      w-full
+      text-sm
+      text-white
+      bg-white/10
+      border border-white/30
+      rounded-md
+      cursor-pointer
+
+      file:h-full
+      file:border-0
+      file:px-7
+      
+      file:mr-1
+      file:bg-white/20
+      file:text-white
+      file:font-medium
+      file:leading-none
+      file:cursor-pointer
+
+      hover:file:bg-white/30
+    "
+  />
+</div>
 
                                 <div className="pt-2">
-                                    <Button className="w-full py-7 text-lg font-black bg-[#333333] hover:bg-[#222222] text-white rounded-sm uppercase tracking-wider shadow-lg hover:-translate-y-1 transition-all border-b-4 border-[#9a0c12] relative overflow-hidden group">
+                                    <Button className="w-full py-7 text-lg font-black bg-[#333333] hover:bg-[#222222] text-white rounded-sm uppercase tracking-wider shadow-lg hover:-translate-y-1 transition-all border-b-4 border-[#9a0c12] relative overflow-hidden group cursor-pointer">
                                         <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
                                         <span className="relative z-10">ECONOMIZE AGORA</span>
                                     </Button>
