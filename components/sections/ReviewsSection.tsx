@@ -38,7 +38,7 @@ export default function ReviewsSection() {
                     <h2 className="text-xl md:text-2xl text-slate-300 font-medium tracking-widest mb-1">
                         Feedback de
                     </h2>
-                    <h3 className="text-4xl md:text-5xl text-[#D51119] font-black capitalize" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+                    <h3 className="text-4xl md:text-5xl text-[#D51119] font-black capitalize">
                         Nossos Clientes
                     </h3>
                 </div>

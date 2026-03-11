@@ -23,7 +23,7 @@ export default function ProjectsGallerySection() {
     return (
         <section className="relative py-24 overflow-hidden border-t-8 border-[#D51119] bg-neutral-900">
             {/* Background Image Setup */}
-            <div className="absolute bottom-0 left-0 right-0 h-[40%] z-0">
+            <div className="absolute bottom-0 left-0 right-0 z-0">
                 <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-neutral-900 to-transparent z-10" />
                 <img
                     src="/placas_solares.webp"
@@ -42,7 +42,7 @@ export default function ProjectsGallerySection() {
                     <h2 className="text-xl md:text-2xl text-slate-300 font-medium tracking-widest mb-1">
                         Conheça nossos
                     </h2>
-                    <h3 className="text-4xl md:text-5xl text-[#D51119] font-black capitalize" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+                    <h3 className="text-4xl md:text-5xl text-[#D51119] font-black capitalize">
                         Projetos
                     </h3>
                     <p className="text-slate-200 mt-4 text-lg">
@@ -62,7 +62,7 @@ export default function ProjectsGallerySection() {
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ delay: i * 0.1 }}
                             onClick={() => setSelectedImage(img.src)}
-                            className="relative w-[85vw] md:w-full h-[60vw] md:h-64 lg:h-72 rounded-sm overflow-hidden group cursor-pointer shadow-xl border border-white/10 shrink-0 snap-center"
+                            className="relative w-[75vw] md:w-full h-[60vw] md:h-64 lg:h-72 rounded-sm overflow-hidden group cursor-pointer shadow-xl border border-white/10 shrink-0 snap-center"
                         >
                             <div className="absolute inset-0 bg-slate-900 flex items-center justify-center -z-10">
                                 <span className="text-slate-600">Carregando...</span>

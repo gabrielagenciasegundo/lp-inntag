@@ -1,9 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { X } from "lucide-react";
 
 export default function AboutSection() {
+    const [isVideoOpen, setIsVideoOpen] = useState(false);
+
     return (
         <section className="py-24 bg-white relative">
             {/* Downward pointing triangle (divider from dark section above) */}
@@ -76,18 +80,58 @@ export default function AboutSection() {
                                     height={50}
                                     className="brightness-0 invert mb-12"
                                 />
-                                <a href="https://www.youtube.com/watch?v=kaXlfJmnI9M" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center group cursor-pointer z-20">
+                                <button onClick={() => setIsVideoOpen(true)} className="flex flex-col items-center group cursor-pointer z-20">
                                     <div className="w-16 h-16 bg-white/10 group-hover:bg-[#D51119]/90 rounded-full mx-auto flex items-center justify-center backdrop-blur-sm border border-white/20 animate-pulse group-hover:animate-none transition-all shadow-lg group-hover:shadow-[#D51119]/50">
                                         <div className="w-0 h-0 border-l-[12px] border-l-white border-y-[8px] border-y-transparent ml-1"></div>
                                     </div>
                                     <p className="text-white mt-4 font-bold tracking-widest uppercase text-sm group-hover:text-amber-500 transition-colors">Assista ao vídeo</p>
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </motion.div>
 
                 </div>
             </div>
+
+            {/* Video Popup Modal */}
+            <AnimatePresence>
+                {isVideoOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setIsVideoOpen(false)}
+                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
+                    >
+                        <button
+                            className="absolute top-6 right-6 text-white hover:text-[#D51119] transition-colors focus:outline-none z-50"
+                            onClick={() => setIsVideoOpen(false)}
+                        >
+                            <X className="w-10 h-10" />
+                        </button>
+
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                            className="relative w-full max-w-5xl aspect-video bg-black rounded-lg overflow-hidden shadow-2xl"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <iframe
+                                width="100%"
+                                height="100%"
+                                src="https://www.youtube.com/embed/kaXlfJmnI9M?autoplay=1"
+                                title="YouTube video player"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                                className="absolute inset-0 w-full h-full"
+                            ></iframe>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 }

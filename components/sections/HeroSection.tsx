@@ -23,14 +23,14 @@ export default function HeroSection() {
             </div>
 
             <div className="container mx-auto px-4 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-6xl mx-auto">
 
                     {/* Left Column: Copy */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="text-white space-y-4 max-w-xl"
+                        className="text-white space-y-4 lg:col-span-7"
                     >
                         {/* Logo */}
                         <div className="mb-6">
@@ -62,7 +62,7 @@ export default function HeroSection() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="w-full max-w-md mx-auto lg:ml-auto"
+                        className="w-full max-w-md lg:col-span-5 mx-auto lg:mr-auto"
                     >
                         <div id="lead-form" className="bg-[#D51119] rounded-lg shadow-2xl p-6 md:p-8 flex flex-col space-y-5 border-b-8 border-[#9a0c12]">
                             <div className="text-center mb-2">
