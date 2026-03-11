@@ -49,12 +49,12 @@ export default function ReviewsSection() {
                 <div className="mt-16 text-center">
                     <button
                         onClick={() => document.getElementById('lead-form')?.scrollIntoView({ behavior: 'smooth' })}
-                        className="px-12 py-5 bg-[#333333] hover:bg-[#222222] text-white font-black text-lg uppercase rounded-sm shadow-2xl transition-all border-b-4 border-[#9a0c12] hover:-translate-y-1 relative overflow-hidden group cursor-pointer"
+                        className="px-12 py-5 bg-green-500 hover:bg-[#222222] text-white font-black text-lg uppercase rounded-sm shadow-2xl transition-all hover:-translate-y-1 relative overflow-hidden group cursor-pointer"
                     >
                         <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
                         <span className="relative z-10">Quero Economizar</span>
                     </button>
-                    <p className="text-xs text-[#D51119] mt-3 font-bold uppercase tracking-wider">Orçamento rápido e gratuito</p>
+                    <p className="text-xs text-white mt-3 font-bold uppercase tracking-wider">Orçamento rápido e gratuito</p>
                 </div>
             </div>
         </section>

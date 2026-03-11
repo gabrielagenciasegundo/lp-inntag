@@ -118,8 +118,8 @@ export default function HeroSection() {
       file:px-7
       file:rounded-md
       file:mr-1
-      file:bg-white/20
-      file:text-white
+      file:bg-white
+      file:text-black
       file:font-medium
       file:leading-none
       file:cursor-pointer
@@ -130,10 +130,14 @@ export default function HeroSection() {
                                 </div>
 
                                 <div className="pt-2">
-                                    <Button className="w-full py-7 text-lg font-black bg-[#333333] hover:bg-[#222222] text-white rounded-sm uppercase tracking-wider shadow-lg hover:-translate-y-1 transition-all border-b-4 border-[#9a0c12] relative overflow-hidden group cursor-pointer">
+                                    <Button className="w-full py-7 text-lg font-black bg-green-500 hover:bg-[#222222] text-white rounded-sm uppercase tracking-wider shadow-lg hover:-translate-y-1 transition-all relative overflow-hidden group cursor-pointer">
                                         <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
                                         <span className="relative z-10">ECONOMIZE AGORA</span>
                                     </Button>
+                                    {/* <Button className="w-full py-7 text-lg font-black bg-[#333333] hover:bg-[#222222] text-white rounded-sm uppercase tracking-wider shadow-lg hover:-translate-y-1 transition-all border-b-4 border-[#9a0c12] relative overflow-hidden group cursor-pointer">
+                                        <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                                        <span className="relative z-10">ECONOMIZE AGORA</span>
+                                    </Button> */}
                                 </div>
                             </form>
                         </div>
