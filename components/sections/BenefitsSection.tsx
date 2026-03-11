@@ -27,19 +27,19 @@ export default function BenefitsSection() {
             title: "ZERO PREOCUPAÇÕES",
             description: "Nós cuidamos de toda a burocracia para você.",
             icon: <Home className="w-10 h-10 text-white" />,
-            image: "/residencial.jpg"
+            image: "/residencial.webp"
         },
         {
             title: "INSTALAÇÃO RÁPIDA",
             description: "Equipe especializada entregando no prazo.",
             icon: <Wrench className="w-10 h-10 text-white" />,
-            image: "/portfolio/f88c44_7b596169b5e8464a9ff1338faea94e13~mv2.png"
+            image: "/portfolio/f88c44_7b596169b5e8464a9ff1338faea94e13~mv2.webp"
         },
         {
             title: "GARANTIA DE SATISFAÇÃO",
             description: "Resultados comprovados em milhares de projetos.",
             icon: <ShieldCheck className="w-10 h-10 text-white" />,
-            image: "/placas_solares.jpg"
+            image: "/placas_solares.webp"
         }
     ];
 
@@ -48,7 +48,7 @@ export default function BenefitsSection() {
             <div className="container mx-auto px-4 max-w-6xl text-center">
 
                 <div className="mb-12">
-                    <h2 className="text-xl md:text-2xl text-slate-400 font-medium tracking-widest capitalize mb-1">
+                    <h2 className="text-xl md:text-2xl text-slate-400 font-medium tracking-widest mb-1">
                         Vantagens da
                     </h2>
                     <h3 className="text-4xl md:text-5xl text-slate-800 font-black capitalize">

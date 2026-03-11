@@ -13,19 +13,20 @@ export default function ProjectsGallerySection() {
         { src: "/portfolio/f88c44_ab93b8653a0f43e98fa6a253d8249bcc~mv2.avif", alt: "Casa de alto padrão com energia solar" },
         { src: "/portfolio/f88c44_5e91cba94e524fc386f02c8c5afdb7ae~mv2.avif", alt: "Painéis solares ao pôr do sol" },
         { src: "/portfolio/f88c44_df600b3c082140e9bee09acca63427ec~mv2.avif", alt: "Equipe técnica durante instalação" },
-        { src: "/portfolio/f88c44_4327fc0122e74205b94d6c6e76ff044e~mv2 (1).png", alt: "Estrutura fotovoltaica" },
-        { src: "/portfolio/f88c44_7b596169b5e8464a9ff1338faea94e13~mv2.png", alt: "Instalação rápida e limpa" },
+        { src: "/portfolio/f88c44_4327fc0122e74205b94d6c6e76ff044e~mv2.webp", alt: "Estrutura fotovoltaica" },
+        { src: "/portfolio/f88c44_7b596169b5e8464a9ff1338faea94e13~mv2.webp", alt: "Instalação rápida e limpa" },
         { src: "/portfolio/f88c44_8e90452fda0f45bc9a7029d99bfb4fd4~mv2 (1).avif", alt: "Painéis de alta performance" },
     ];
 
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
     return (
-        <section className="relative py-24 overflow-hidden border-t-8 border-[#D51119]">
+        <section className="relative py-24 overflow-hidden border-t-8 border-[#D51119] bg-neutral-900">
             {/* Background Image Setup */}
-            <div className="absolute inset-0 z-0">
+            <div className="absolute bottom-0 left-0 right-0 h-[40%] z-0">
+                <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-neutral-900 to-transparent z-10" />
                 <img
-                    src="/placas_solares.jpg"
+                    src="/placas_solares.webp"
                     alt="Energia solar fundo"
                     className="w-full h-full object-cover object-center"
                 />
@@ -38,8 +39,8 @@ export default function ProjectsGallerySection() {
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-xl md:text-2xl text-slate-300 font-medium tracking-widest capitalize mb-1">
-                        Conheça Nossos
+                    <h2 className="text-xl md:text-2xl text-slate-300 font-medium tracking-widest mb-1">
+                        Conheça nossos
                     </h2>
                     <h3 className="text-4xl md:text-5xl text-[#D51119] font-black capitalize" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
                         Projetos

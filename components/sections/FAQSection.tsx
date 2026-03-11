@@ -36,7 +36,7 @@ export default function FAQSection() {
             {/* Background Image Setup */}
             <div className="absolute inset-0 z-0">
                 <img
-                    src="/placas_solares.jpg"
+                    src="/placas_solares.webp"
                     alt="Energia solar fundo"
                     className="w-full h-full object-cover object-center translate-y-20 scale-110" // Parallax-ish offset
                 />

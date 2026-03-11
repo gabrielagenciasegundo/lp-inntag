@@ -20,7 +20,7 @@ export default function AboutSection() {
                         className="space-y-6"
                     >
                         <div className="mb-8 border-l-4 border-[#D51119] pl-4">
-                            <h2 className="text-xl md:text-2xl text-slate-400 font-medium tracking-widest capitalize mb-1">
+                            <h2 className="text-xl md:text-2xl text-slate-400 font-medium tracking-widest mb-1">
                                 Sobre a
                             </h2>
                             <h3 className="text-4xl md:text-5xl text-slate-800 font-black capitalize">
@@ -62,7 +62,7 @@ export default function AboutSection() {
                         <div className="aspect-square md:aspect-[3/4] bg-slate-900 rounded-sm overflow-hidden flex flex-col items-center justify-center p-8 text-center border-b-8 border-[#D51119] shadow-2xl relative">
                             <div className="absolute inset-0 z-0">
                                 <img
-                                    src="/mariana-proenca-GXiHwHkIdVs-unsplash.jpg"
+                                    src="/mariana-proenca-GXiHwHkIdVs-unsplash.webp"
                                     alt="Textura Inntag"
                                     className="w-full h-full object-cover opacity-20"
                                 />

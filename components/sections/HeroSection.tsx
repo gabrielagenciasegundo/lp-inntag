@@ -11,7 +11,7 @@ export default function HeroSection() {
             {/* Background Image Setup */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/placas_solares.jpg"
+                    src="/placas_solares.webp"
                     alt="Energia solar residencial Inntag"
                     fill
                     className="object-cover object-center"
@@ -46,8 +46,8 @@ export default function HeroSection() {
                         <h2 className="text-3xl md:text-5xl font-semibold text-slate-200 mb-2">
                             Reduza sua conta
                         </h2>
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold text-[#D51119] capitalize tracking-tight leading-none mb-4" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
-                            de energia residencial
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold text-[#D51119] tracking-tight leading-none mb-4" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
+                            de Energia Residencial
                         </h1>
 
                         <p className="text-xl md:text-3xl font-medium text-white leading-tight mt-6">

@@ -22,7 +22,7 @@ export default function ReviewsSection() {
             {/* Background Image Setup */}
             <div className="absolute inset-0 z-0">
                 <img
-                    src="/nuno-marques-0GbrjL3vZF4-unsplash.jpg"
+                    src="/nuno-marques-0GbrjL3vZF4-unsplash.webp"
                     alt="Energia solar fundo"
                     className="w-full h-full object-cover object-bottom"
                 />
@@ -35,7 +35,7 @@ export default function ReviewsSection() {
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-xl md:text-2xl text-slate-300 font-medium tracking-widest capitalize mb-1">
+                    <h2 className="text-xl md:text-2xl text-slate-300 font-medium tracking-widest mb-1">
                         Feedback de
                     </h2>
                     <h3 className="text-4xl md:text-5xl text-[#D51119] font-black capitalize" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
