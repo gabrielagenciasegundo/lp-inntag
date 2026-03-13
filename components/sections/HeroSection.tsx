@@ -1,11 +1,71 @@
 "use client";
 
+import { FormEvent, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 
+const MAX_FILE_SIZE_BYTES = 3 * 1024 * 1024;
+
+function formatPhone(value: string) {
+    const digits = value.replace(/\D/g, "").slice(0, 11);
+
+    if (digits.length <= 2) return digits;
+    if (digits.length <= 7) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+
+    return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+}
+
 export default function HeroSection() {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitMessage, setSubmitMessage] = useState("");
+    const [telefone, setTelefone] = useState("");
+
+    async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+
+        const form = event.currentTarget;
+        const formData = new FormData(form);
+        const telefoneValue = String(formData.get("telefone") ?? "");
+        const telefoneDigits = telefoneValue.replace(/\D/g, "");
+        const contaEnergia = formData.get("conta_energia");
+
+        setSubmitMessage("");
+
+        if (telefoneDigits.length !== 11) {
+            setSubmitMessage("Informe um celular/WhatsApp válido com DDD + 9 dígitos.");
+            return;
+        }
+
+        if (contaEnergia instanceof File && contaEnergia.size > MAX_FILE_SIZE_BYTES) {
+            setSubmitMessage("O arquivo deve ter no máximo 3MB.");
+            return;
+        }
+
+        formData.set("telefone", telefoneDigits);
+        setIsSubmitting(true);
+
+        try {
+            const response = await fetch("/api/lead", {
+                method: "POST",
+                body: formData,
+            });
+
+            if (!response.ok) {
+                throw new Error("Falha ao enviar formulário");
+            }
+
+            form.reset();
+            setTelefone("");
+            setSubmitMessage("Dados enviados com sucesso. Em breve entraremos em contato.");
+        } catch {
+            setSubmitMessage("Não foi possível enviar agora. Tente novamente em instantes.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    }
+
     return (
         <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
             {/* Background Image Setup */}
@@ -72,27 +132,41 @@ export default function HeroSection() {
                                 </h3>
                             </div>
 
-                            <form className="space-y-3">
+                            <form className="space-y-3" onSubmit={handleSubmit}>
                                 <Input
+                                    name="nome"
                                     placeholder="Nome"
                                     className="bg-white border-0 py-6 text-slate-800 focus-visible:ring-2 focus-visible:ring-[#333333] rounded-sm"
+                                    required
                                 />
 
                                 <Input
+                                    name="telefone"
                                     type="tel"
                                     placeholder="Celular / WhatsApp"
+                                    value={telefone}
+                                    onChange={(event) => {
+                                        setTelefone(formatPhone(event.currentTarget.value));
+                                    }}
+                                    maxLength={15}
+                                    inputMode="numeric"
                                     className="bg-white border-0 py-6 text-slate-800 focus-visible:ring-2 focus-visible:ring-[#333333] rounded-sm"
+                                    required
                                 />
 
                                 <Input
+                                    name="cidade_estado"
                                     placeholder="Cidade / Estado"
                                     className="bg-white border-0 py-6 text-slate-800 focus-visible:ring-2 focus-visible:ring-[#333333] rounded-sm"
+                                    required
                                 />
 
                                 <Input
+                                    name="valor_conta_luz"
                                     type="number"
                                     placeholder="Valor médio da conta de luz"
                                     className="bg-white border-0 py-6 text-slate-800 focus-visible:ring-2 focus-visible:ring-[#333333] rounded-sm"
+                                    required
                                 />
 
                                 <div className="space-y-1">
@@ -101,8 +175,21 @@ export default function HeroSection() {
                                     </label>
 
                                     <Input
+                                        name="conta_energia"
                                         type="file"
                                         accept=".pdf,.png,.jpg,.jpeg"
+                                        onChange={(event) => {
+                                            const file = event.currentTarget.files?.[0];
+
+                                            if (!file) return;
+
+                                            if (file.size > MAX_FILE_SIZE_BYTES) {
+                                                event.currentTarget.value = "";
+                                                setSubmitMessage("O arquivo deve ter no máximo 3MB.");
+                                            } else {
+                                                setSubmitMessage("");
+                                            }
+                                        }}
                                         className="
       h-14
       w-full
@@ -130,15 +217,24 @@ export default function HeroSection() {
                                 </div>
 
                                 <div className="pt-2">
-                                    <Button className="w-full py-7 text-lg font-black bg-green-500 hover:bg-[#222222] text-white rounded-sm uppercase tracking-wider shadow-lg hover:-translate-y-1 transition-all relative overflow-hidden group cursor-pointer">
+                                    <Button
+                                        type="submit"
+                                        disabled={isSubmitting}
+                                        className="w-full py-7 text-lg font-black bg-green-500 hover:bg-[#222222] text-white rounded-sm uppercase tracking-wider shadow-lg hover:-translate-y-1 transition-all relative overflow-hidden group cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
+                                    >
                                         <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
-                                        <span className="relative z-10">ECONOMIZE AGORA</span>
+                                        <span className="relative z-10">
+                                            {isSubmitting ? "ENVIANDO..." : "ECONOMIZE AGORA"}
+                                        </span>
                                     </Button>
                                     {/* <Button className="w-full py-7 text-lg font-black bg-[#333333] hover:bg-[#222222] text-white rounded-sm uppercase tracking-wider shadow-lg hover:-translate-y-1 transition-all border-b-4 border-[#9a0c12] relative overflow-hidden group cursor-pointer">
                                         <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
                                         <span className="relative z-10">ECONOMIZE AGORA</span>
                                     </Button> */}
                                 </div>
+                                {submitMessage ? (
+                                    <p className="text-xs text-white text-center">{submitMessage}</p>
+                                ) : null}
                             </form>
                         </div>
                     </motion.div>
